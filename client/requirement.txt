@@ -1,0 +1,18 @@
+create 3 sidebaroptionswithlabelsofrecommendcrop,recommendfertilizeranddetectcrop-disease
+
+recommend crop ->N(Nitrogen),P(Phosphorous),K(Potassium),temperature,humidity,ph(ph value),rainfall(rainfall value)=>request->{features:[1,2,3,4,5,6,7]}
+ end point => http://127.0.0.1:5000/predict_crop
+
+recommend fertilizer ->Temparature,Humidity,Soil Moisture,Soil Type,Crop Type,Nitrogen,Potassium,Phosphorous => request->
+
+   {
+  "features": [26, 52, 38, "Sandy", "Maize", 37, 0, 0]
+  }
+
+    soil types(dropdown) => ['Sandy' 'Loamy' 'Black' 'Red' 'Clayey']
+crop types(dropdown) =>['Maize' 'Sugarcane' 'Cotton' 'Tobacco' 'Paddy' 'Barley' 'Wheat' 'Millets'
+ 'Oil seeds' 'Pulses' 'Ground Nuts']
+ end point => http://127.0.0.1:5000/predict_fertilizer
+
+disease classification->(image have ton upload with key image use FormData())
+ end point => http://127.0.0.1:5000/predict
