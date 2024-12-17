@@ -217,6 +217,8 @@ const viewFavorites = async (req, res) => {
     res.json({ success: false, message: "Some internal error!" });
   }
 };
+
+
 const orderProduct = async (req, res) => {
   try {
     const {
@@ -259,6 +261,8 @@ const orderProduct = async (req, res) => {
     res.json({ success: false, message: "Some internal error!" });
   }
 };
+
+
 const viewOrders = async (req, res) => {
   try {
     const orders = await orderSchema.find({ customer: req.customer });

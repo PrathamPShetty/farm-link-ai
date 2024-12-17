@@ -67,7 +67,7 @@ router.post(
 router.put(
   "/updateProduct/:id",
   VerifyFarmerToken,
-  uploadProduct.single("picture"),
+  
   updateProduct
 );
 router.get("/getAllProducts", VerifyFarmerToken, getAllProducts);

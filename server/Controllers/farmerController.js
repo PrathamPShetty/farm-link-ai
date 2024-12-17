@@ -187,14 +187,14 @@ const updateProduct = async (req, res) => {
     } else {
       const { title, price, unit, unitOfMeasure, description, status } =
         req.body;
-      const picture = req?.file?.filename;
+      
       const updatedInfo = {};
       if (title) updatedInfo.title = title;
       if (price) updatedInfo.price = price;
       if (unit) updatedInfo.unit = unit;
       if (unitOfMeasure) updatedInfo.unitOfMeasure = unitOfMeasure;
       if (description) updatedInfo.description = description;
-      if (picture) updatedInfo.picture = picture;
+     
       if (status) updatedInfo.status = status;
       await productSchema.findByIdAndUpdate(
         req.params.id,
