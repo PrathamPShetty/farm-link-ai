@@ -1,4 +1,4 @@
 export const config = {
-  host: "http://localhost:7000",
-  flaskHost: "http://127.0.0.1:5000",
+  host: "http://172.232.110.246:7000/api",
+  flaskHost: "http://192.168.119.84:5000",
 };

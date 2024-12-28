@@ -13,14 +13,14 @@ export default function CropRecommendationForm() {
     setLoading,
   } = useContext(FarmerContext);
   const [formData, setFormData] = useState({
-    temperature: "",
-    humidity: "",
-    soilMoisture: "",
-    soilType: "",
-    cropType: "",
-    nitrogen: "",
-    potassium: "",
-    phosphorus: "",
+    jsont: "",
+    jsonh: "",
+    jsonsm: "",
+    jsonsoil: "",
+    jsoncrop: "",
+    jsonn: "",
+    jsonp: "",
+    jsonk: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -28,21 +28,21 @@ export default function CropRecommendationForm() {
     setButtonDisable(false);
     setFertilizerPrediction(null);
     setFormData({
-      temperature: "",
-      humidity: "",
-      soilMoisture: "",
-      soilType: "",
-      cropType: "",
-      nitrogen: "",
-      potassium: "",
-      phosphorus: "",
+      jsont: "",
+      jsonh: "",
+      jsonsm: "",
+      jsonsoil: "",
+      jsoncrop: "",
+      jsonn: "",
+      jsonp: "",
+      jsonk: "",
     });
     setErrors({});
   }, []);
 
   // Soil and Crop Type options
-  const soilTypes = ["Sandy", "Loamy", "Black", "Red", "Clayey"];
-  const cropTypes = [
+  const jsonsoils = ["Sandy", "Loamy", "Black", "Red", "Clayey"];
+  const jsoncrops = [
     "Maize",
     "Sugarcane",
     "Cotton",
@@ -104,35 +104,35 @@ export default function CropRecommendationForm() {
     <Box sx={{ flexGrow: 1 }}>
       <form onSubmit={handleSubmit}>
         <Grid container spacing={2}>
-          {/* Temperature */}
+          {/* jsont */}
           <Grid xs={12} sm={6} item>
             <TextField
-              label="Temperature (°C)"
-              placeholder="Enter temperature value"
-              name="temperature"
-              value={formData.temperature}
+              label="jsont (°C)"
+              placeholder="Enter jsont value"
+              name="jsont"
+              value={formData.jsont}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.temperature}
-              helperText={errors.temperature}
+              error={!!errors.jsont}
+              helperText={errors.jsont}
             />
           </Grid>
 
-          {/* Humidity */}
+          {/* jsonh */}
           <Grid xs={12} sm={6} item>
             <TextField
-              label="Humidity (%)"
-              placeholder="Enter humidity value"
-              name="humidity"
-              value={formData.humidity}
+              label="jsonh (%)"
+              placeholder="Enter jsonh value"
+              name="jsonh"
+              value={formData.jsonh}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.humidity}
-              helperText={errors.humidity}
+              error={!!errors.jsonh}
+              helperText={errors.jsonh}
             />
           </Grid>
 
@@ -141,14 +141,14 @@ export default function CropRecommendationForm() {
             <TextField
               label="Soil Moisture (%)"
               placeholder="Enter soil moisture value"
-              name="soilMoisture"
-              value={formData.soilMoisture}
+              name="jsonsm"
+              value={formData.jsonsm}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.soilMoisture}
-              helperText={errors.soilMoisture}
+              error={!!errors.jsonsm}
+              helperText={errors.jsonsm}
             />
           </Grid>
 
@@ -157,15 +157,15 @@ export default function CropRecommendationForm() {
             <TextField
               select
               label="Soil Type"
-              name="soilType"
-              value={formData.soilType}
+              name="jsonsoil"
+              value={formData.jsonsoil}
               onChange={handleChange}
               fullWidth
               variant="outlined"
-              error={!!errors.soilType}
-              helperText={errors.soilType}
+              error={!!errors.jsonsoil}
+              helperText={errors.jsonsoil}
             >
-              {soilTypes.map((type) => (
+              {jsonsoils.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
                 </MenuItem>
@@ -178,15 +178,15 @@ export default function CropRecommendationForm() {
             <TextField
               select
               label="Crop Type"
-              name="cropType"
-              value={formData.cropType}
+              name="jsoncrop"
+              value={formData.jsoncrop}
               onChange={handleChange}
               fullWidth
               variant="outlined"
-              error={!!errors.cropType}
-              helperText={errors.cropType}
+              error={!!errors.jsoncrop}
+              helperText={errors.jsoncrop}
             >
-              {cropTypes.map((type) => (
+              {jsoncrops.map((type) => (
                 <MenuItem key={type} value={type}>
                   {type}
                 </MenuItem>
@@ -194,51 +194,51 @@ export default function CropRecommendationForm() {
             </TextField>
           </Grid>
 
-          {/* Nitrogen */}
+          {/* jsonn */}
           <Grid xs={12} sm={6} item>
             <TextField
-              label="Nitrogen (N)"
-              placeholder="Enter nitrogen value"
-              name="nitrogen"
-              value={formData.nitrogen}
+              label="jsonn (N)"
+              placeholder="Enter jsonn value"
+              name="jsonn"
+              value={formData.jsonn}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.nitrogen}
-              helperText={errors.nitrogen}
+              error={!!errors.jsonn}
+              helperText={errors.jsonn}
             />
           </Grid>
 
-          {/* Potassium */}
+          {/* jsonp */}
           <Grid xs={12} sm={6} item>
             <TextField
-              label="Potassium (K)"
-              placeholder="Enter potassium value"
-              name="potassium"
-              value={formData.potassium}
+              label="jsonp (K)"
+              placeholder="Enter jsonp value"
+              name="jsonp"
+              value={formData.jsonp}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.potassium}
-              helperText={errors.potassium}
+              error={!!errors.jsonp}
+              helperText={errors.jsonp}
             />
           </Grid>
 
-          {/* Phosphorus */}
+          {/* jsonk */}
           <Grid xs={12} sm={6} item>
             <TextField
-              label="Phosphorus (P)"
-              placeholder="Enter phosphorus value"
-              name="phosphorus"
-              value={formData.phosphorus}
+              label="jsonk (P)"
+              placeholder="Enter jsonk value"
+              name="jsonk"
+              value={formData.jsonk}
               onChange={handleChange}
               type="number"
               fullWidth
               variant="outlined"
-              error={!!errors.phosphorus}
-              helperText={errors.phosphorus}
+              error={!!errors.jsonk}
+              helperText={errors.jsonk}
             />
           </Grid>
 
@@ -271,14 +271,14 @@ export default function CropRecommendationForm() {
               onClick={() => {
                 setErrors({});
                 setFormData({
-                  temperature: "",
-                  humidity: "",
-                  soilMoisture: "",
-                  soilType: "",
-                  cropType: "",
-                  nitrogen: "",
-                  potassium: "",
-                  phosphorus: "",
+                  jsont: "",
+                  jsonh: "",
+                  jsonsm: "",
+                  jsonsoil: "",
+                  jsoncrop: "",
+                  jsonn: "",
+                  jsonp: "",
+                  jsonk: "",
                 });
                 setFertilizerPrediction(null);
                 setButtonDisable(false);
